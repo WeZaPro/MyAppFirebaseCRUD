@@ -13,12 +13,13 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etInsert,etInsertNumber;
+    EditText etInsert,etInsertNumber,etFilter;
     Button btnInsert, btnSortData,btnRefresh,btnFilterData;
     FirebaseDatabase database;
     DatabaseReference myRef;
     MyModelData myModelData;
     public static String PathFolder = "user";
+    public static String currentUser = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         etInsert = findViewById(R.id.etInsert);
         etInsertNumber = findViewById(R.id.etInsertNumber);
+        etFilter = findViewById(R.id.etFilter);
+
         btnInsert = findViewById(R.id.btnInsert);
         btnSortData = findViewById(R.id.btnSortData);
         btnRefresh = findViewById(R.id.btnRefresh);
@@ -92,10 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                FilerDataFragment filerDataFragment = new FilerDataFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.contentContainer, filerDataFragment).commit();
+                //currentUser = etFilter.getText().toString();
 
             }
         });

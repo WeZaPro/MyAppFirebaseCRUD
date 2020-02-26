@@ -34,6 +34,14 @@
                 android:textSize="15sp"
                 android:gravity="center"/>
 
+            <EditText
+                android:id="@+id/etFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="filter"
+                android:textSize="15sp"
+                android:gravity="center"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -70,7 +78,7 @@
                 android:id="@+id/btnFilterData"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:hint="Filter data"
+                android:hint="FilterCur data"
                 android:textSize="15sp"
                 android:gravity="center"/>
 

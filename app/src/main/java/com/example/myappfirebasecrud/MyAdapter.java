@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static com.example.myappfirebasecrud.MainActivity.currentUser;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
 
     Context context;
     ArrayList<MyModelData> listData;
 
-    String CurrenUser = "1";
-    //View v;
 
     public MyAdapter(Context context, ArrayList<MyModelData> listData) {
 
@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView;
         itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_item, parent, false);
-        
+
         return new VH(itemView);
     }
 
@@ -40,18 +40,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
 
-        /*holder.tvName.setText(listData.get(position).getName());
-        holder.tvNumber.setText(listData.get(position).getNumber());*/
-
-        if (listData.get(position).getNumber().equals(CurrenUser)) {
-            //ซ่อนข้อมูล
-            holder.itemView.setVisibility(View.GONE);
-            // ให้ Item ถัดไปเลื่อนขึ้นมา
-            holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
-        } else {
+        if(currentUser.isEmpty()){
             holder.tvName.setText(listData.get(position).getName());
             holder.tvNumber.setText(listData.get(position).getNumber());
 
+        }else {
+            if (listData.get(position).getNumber().equals("1")) {
+                //ซ่อนข้อมูล
+                holder.itemView.setVisibility(View.GONE);
+                // ให้ Item ถัดไปเลื่อนขึ้นมา
+                holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+            } else {
+            /*holder.itemView.setVisibility(View.VISIBLE);
+            holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));*/
+
+                holder.tvName.setText(listData.get(position).getName());
+                holder.tvNumber.setText(listData.get(position).getNumber());
+
+            }
         }
 
     }

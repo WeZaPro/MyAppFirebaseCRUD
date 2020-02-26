@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference myRef;
     MyModelData myModelData;
     public static String PathFolder = "user";
-    public static String currentUser = "1";
+    public static String currentUser = "-M1-cJQ3agxN3wYZ1mHq";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

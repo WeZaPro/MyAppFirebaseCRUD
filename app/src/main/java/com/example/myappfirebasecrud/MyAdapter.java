@@ -45,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
             holder.tvNumber.setText(listData.get(position).getNumber());
 
         }else {
-            if (listData.get(position).getNumber().equals("1")) {
+            if (listData.get(position).getUID().equals(currentUser)) {
                 //ซ่อนข้อมูล
                 holder.itemView.setVisibility(View.GONE);
                 // ให้ Item ถัดไปเลื่อนขึ้นมา

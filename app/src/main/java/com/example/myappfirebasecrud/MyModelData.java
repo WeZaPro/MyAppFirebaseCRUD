@@ -8,7 +8,7 @@ public class MyModelData {
     public MyModelData() {
     }
 
-    public MyModelData(String UID,String number, String name) {
+    public MyModelData(String UID, String number, String name) {
         this.UID = UID;
         this.name = name;
         this.number = number;

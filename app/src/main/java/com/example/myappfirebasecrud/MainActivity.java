@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     EditText etInsert,etInsertNumber;
-    Button btnInsert, btnSortData,btnRefresh;
+    Button btnInsert, btnSortData,btnRefresh,btnFilterData;
     FirebaseDatabase database;
     DatabaseReference myRef;
     MyModelData myModelData;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btnInsert = findViewById(R.id.btnInsert);
         btnSortData = findViewById(R.id.btnSortData);
         btnRefresh = findViewById(R.id.btnRefresh);
+        btnFilterData = findViewById(R.id.btnFilterData);
 
 
         // Write a message to the database
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(etInsert.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Plaese insert data ",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Please insert data ",Toast.LENGTH_LONG).show();
                 }else {
                     String key = myRef.push().getKey();
                     myModelData = new MyModelData(key,etInsertNumber.getText().toString(), etInsert.getText().toString());
@@ -67,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 SortDataFragment sortDataFragment = new SortDataFragment();
-
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentContainer, sortDataFragment).commit();
@@ -80,12 +80,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 MainFragment mainFragment = new MainFragment();
-
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.contentContainer, mainFragment).commit();
+
+            }
+        });
+
+        btnFilterData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FilerDataFragment filerDataFragment = new FilerDataFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentContainer, filerDataFragment).commit();
 
             }
         });

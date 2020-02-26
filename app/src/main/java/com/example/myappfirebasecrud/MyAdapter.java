@@ -17,6 +17,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
     Context context;
     ArrayList<MyModelData> listData;
 
+    String CurrenUser = "1";
+    //View v;
+
     public MyAdapter(Context context, ArrayList<MyModelData> listData) {
 
         this.context = context;
@@ -27,16 +30,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
     @NonNull
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_item, parent, false);
-
-        return new VH(view);
+        View itemView;
+        itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_item, parent, false);
+        
+        return new VH(itemView);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull VH holder, int position) {
 
-        holder.tvName.setText(listData.get(position).getName());
-        holder.tvNumber.setText(listData.get(position).getNumber());
+        /*holder.tvName.setText(listData.get(position).getName());
+        holder.tvNumber.setText(listData.get(position).getNumber());*/
+
+        if (listData.get(position).getNumber().equals(CurrenUser)) {
+            //ซ่อนข้อมูล
+            holder.itemView.setVisibility(View.GONE);
+            // ให้ Item ถัดไปเลื่อนขึ้นมา
+            holder.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+        } else {
+            holder.tvName.setText(listData.get(position).getName());
+            holder.tvNumber.setText(listData.get(position).getNumber());
+
+        }
 
     }
 
@@ -45,9 +61,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.VH> {
         return listData.size();
     }
 
-    public class VH extends RecyclerView.ViewHolder{
+    public class VH extends RecyclerView.ViewHolder {
 
-        TextView tvName,tvNumber;
+        TextView tvName, tvNumber;
 
         public VH(@NonNull View itemView) {
             super(itemView);

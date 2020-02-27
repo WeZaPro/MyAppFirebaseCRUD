@@ -26,13 +26,6 @@
             android:background="#BFFFC107"
             android:padding="5dp">
 
-            <TextView
-                android:id="@+id/tvNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="number"
-                android:textSize="15sp"
-                android:layout_marginLeft="15dp"/>
 
             <TextView
                 android:layout_marginLeft="15dp"

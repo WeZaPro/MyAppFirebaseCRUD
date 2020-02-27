@@ -3,15 +3,13 @@ package com.example.myappfirebasecrud;
 public class MyModelData {
     String UID;
     String name;
-    String number;
-
     public MyModelData() {
     }
 
-    public MyModelData(String UID, String number, String name) {
+    public MyModelData(String UID, String number) {
         this.UID = UID;
         this.name = name;
-        this.number = number;
+
     }
 
     public String getUID() {
@@ -30,11 +28,4 @@ public class MyModelData {
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
 }

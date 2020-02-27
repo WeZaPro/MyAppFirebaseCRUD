@@ -11,20 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/etInsertNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="insertNumber"
-                android:textSize="15sp"
-                android:gravity="center"/>
 
             <EditText
                 android:id="@+id/etInsert"
@@ -55,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:hint="insert"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:gravity="center"/>
 
             <Button
@@ -63,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:hint="refresh"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:gravity="center"/>
 
             <Button
@@ -71,15 +63,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:hint="Sort data"
-                android:textSize="15sp"
+                android:textSize="12sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnShowDataFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:hint="Show Filter data"
+                android:textSize="12sp"
                 android:gravity="center"/>
 
             <Button
-                android:id="@+id/btnFilterData"
+                android:id="@+id/btnHideDataFilter"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:hint="FilterCur data"
-                android:textSize="15sp"
+                android:hint="Hide Filter data"
+                android:textSize="12sp"
                 android:gravity="center"/>
 
 

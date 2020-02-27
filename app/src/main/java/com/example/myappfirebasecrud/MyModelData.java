@@ -6,7 +6,7 @@ public class MyModelData {
     public MyModelData() {
     }
 
-    public MyModelData(String UID, String number) {
+    public MyModelData(String UID, String name) {
         this.UID = UID;
         this.name = name;
 
